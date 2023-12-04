@@ -1,11 +1,15 @@
 package com.example.freeapi.model.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "Creatures")
 public class Creature extends BaseEntity {
 
@@ -25,9 +29,10 @@ public class Creature extends BaseEntity {
         @Column(length = 500)
         private String legendaryOrigin;
 
-        public Creature() {
-                super();
-        }
+        @ManyToOne
+        @JoinColumn(name = "culture_id", nullable = false)
+        private Culture culture;
+
 
 
 

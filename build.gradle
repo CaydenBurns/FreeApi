@@ -9,7 +9,7 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17  // Align with the Java version supported by Gradle 8.4
+    sourceCompatibility = JavaVersion.VERSION_19  // Align with the Java version supported by Gradle 8.4
 }
 
 configurations {
@@ -30,7 +30,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springframework.session:spring-session-core'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    compileOnly 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql'
     implementation 'org.hibernate:hibernate-core:5.5.7.Final'
